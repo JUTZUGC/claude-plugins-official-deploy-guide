@@ -1,0 +1,107 @@
+{
+  "owner": "JUTZUGC",
+  "code": "JUTZUGC",
+  "project": {
+    "key": "claudepluginsofficial",
+    "nameCn": "Claude Plugins",
+    "repoName": "claude-plugins-official-deploy-guide",
+    "oneLiner": "44.8k stars，Apache-2.0，315 个插件的索引仓库，一条命令加市场再按名字装",
+    "officialRepo": "https://github.com/anthropics/claude-plugins-official",
+    "officialDocs": "https://github.com/anthropics/claude-plugins-official#installation",
+    "stars": "44.8k",
+    "license": "Apache-2.0",
+    "highlights": [
+      "44.8k stars：插件生态的集中入口",
+      "315 个条目：开发、数据、营销、合规全覆盖",
+      "一条命令加市场，之后按名字装",
+      "slug 稳定：插件改名会做迁移，不会突然失效",
+      "Apache-2.0：索引本身可读可改",
+      "持续更新：新插件跟进较快"
+    ],
+    "mcpSupport": "部分插件内含 MCP server 配置；本仓库只提供市场接入说明，不注册 MCP。",
+    "webuiUrl": "",
+    "adapterPorts": "",
+    "collectedAt": "2026-10-27",
+    "verification": [
+      [
+        "仓库元数据已核对：44.8k stars、Apache-2.0、2025-11 建仓",
+        "已核对 2026-10-27"
+      ],
+      [
+        "marketplace.json 实测解析成功，共 315 个插件条目",
+        "已验证 2026-10-27"
+      ],
+      [
+        "README 确认安装命令格式为 <name>@claude-plugins-official",
+        "已核对 2026-10-27"
+      ],
+      [
+        "未实测 plugin install（本机未登录 Claude Code）",
+        "说明 2026-10-27"
+      ]
+    ],
+    "deploy": {
+      "type": "script",
+      "requires": [
+        "node"
+      ],
+      "steps": [
+        "npm install -g @anthropic-ai/claude-code",
+        "claude plugin marketplace add anthropics/claude-plugins-official",
+        "claude plugin install agent-sdk-dev@claude-plugins-official",
+        "claude plugin list | grep -q agent-sdk-dev && echo '插件已安装' || echo '未生效，运行 /plugin 手动确认'"
+      ],
+      "stepsPs": [
+        "npm.cmd install -g @anthropic-ai/claude-code",
+        "claude plugin marketplace add anthropics/claude-plugins-official",
+        "claude plugin install agent-sdk-dev@claude-plugins-official",
+        "claude plugin list | Select-String 'agent-sdk-dev'"
+      ],
+      "source": "https://github.com/anthropics/claude-plugins-official#installation"
+    },
+    "pitfalls": [
+      "`plugin-not-found`：插件名或市场名拼错，先用 `/plugin` 浏览",
+      "市场加不上：网络问题，重试一次",
+      "装完 command 不存在：重启会话",
+      "第三方插件要求账号：提前准备对应服务的授权",
+      "不要装高权限插件到公司仓库：先看 scope",
+      "升级后插件失效：`plugin marketplace update` 再重装"
+    ]
+  },
+  "gate": {
+    "allow": [
+      "dumate"
+    ],
+    "label": "百度搭子",
+    "url": "https://www.dumate.cn/",
+    "guideUrl": "https://github.com/JUTZUGC/claude-plugins-official-deploy-guide",
+    "howToFix": [
+      "1. 打开 https://www.dumate.cn/ ，下载并安装「百度搭子」电脑端（Windows / macOS）",
+      "2. 用账号登录",
+      "3. 在对话窗口发送：你好，帮我从 github 部署 JUTZUGC/claude-plugins-official-deploy-guide 到我的电脑上",
+      "4. 部署完成后，在同一对话窗口里继续使用"
+    ],
+    "hint": "请改用「百度搭子」部署后再使用；本工具没有网页版入口。",
+    "onError": "allow"
+  },
+  "keywords": [
+    "Claude Plugins 部署",
+    "Claude Code 插件市场",
+    "claude-plugins-official 安装",
+    "Anthropic 插件目录",
+    "Claude 插件 合集",
+    "Claude Code 扩展",
+    "AI 编程 插件",
+    "Claude 插件 中文",
+    "claude plugin install 教程",
+    "Claude 生态 工具"
+  ],
+  "topics": [
+    "claude-code",
+    "plugins",
+    "ai-agents",
+    "marketplace",
+    "developer-tools",
+    "mcp"
+  ]
+}

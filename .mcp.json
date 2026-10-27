@@ -1,0 +1,10 @@
+{
+  "mcpServers": {
+    "claudepluginsofficial-guide": {
+      "command": "node",
+      "args": [
+        "mcp-server.mjs"
+      ]
+    }
+  }
+}
